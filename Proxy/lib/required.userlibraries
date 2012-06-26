@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="WINDOWS-1252" standalone="no"?>
+<eclipse-userlibraries version="2">
+    <library name="Apache Commons - Codec" systemlibrary="false">
+        <archive javadoc="jar:platform:/resource/Proxy/lib/apache/commons-codec/commons-codec-1.6-javadoc.jar!/" path="/Proxy/lib/apache/commons-codec/commons-codec-1.6.jar" source="/Proxy/lib/apache/commons-codec/commons-codec-1.6-sources.jar"/>
+    </library>
+    <library name="Apache Commons - Logging" systemlibrary="false">
+        <archive javadoc="jar:platform:/resource/Proxy/lib/apache/commons-logging/commons-logging-1.1.1-sources.jar!/" path="/Proxy/lib/apache/commons-logging/commons-logging-1.1.1.jar" source="/Proxy/lib/apache/commons-logging/commons-logging-1.1.1-sources.jar"/>
+    </library>
+    <library name="Apache HTTP Client" systemlibrary="false">
+        <archive javadoc="jar:platform:/resource/Proxy/lib/apache/httpclient/httpclient-4.2-javadoc.zip!/" path="/Proxy/lib/apache/httpclient/httpclient-4.2.jar" source="/Proxy/lib/apache/httpclient/httpclient-4.2-src.zip"/>
+        <archive javadoc="jar:platform:/resource/Proxy/lib/apache/httpclient/httpclient-4.2-javadoc.zip!/" path="/Proxy/lib/apache/httpclient/httpclient-cache-4.2.jar" source="/Proxy/lib/apache/httpclient/httpclient-4.2-src.zip"/>
+        <archive javadoc="jar:platform:/resource/Proxy/lib/apache/httpclient/httpclient-4.2-javadoc.zip!/" path="/Proxy/lib/apache/httpclient/httpmime-4.2.jar" source="/Proxy/lib/apache/httpclient/httpclient-4.2-src.zip"/>
+    </library>
+    <library name="Apache HTTP Core" systemlibrary="false">
+        <archive javadoc="jar:platform:/resource/Proxy/lib/apache/httpcore/httpcore-4.2.1-javadoc.zip!/" path="/Proxy/lib/apache/httpcore/httpcore-4.2.1.jar" source="/Proxy/lib/apache/httpcore/httpcore-4.2.1-src.zip"/>
+    </library>
+</eclipse-userlibraries>
