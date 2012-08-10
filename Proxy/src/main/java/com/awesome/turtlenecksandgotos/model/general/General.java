@@ -1,5 +1,6 @@
 package com.awesome.turtlenecksandgotos.model.general;
 
+import java.net.URI;
 import java.util.Date;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -7,6 +8,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlType;
 
 import com.awesome.turtlenecksandgotos.model.author.HasAuthor;
+import com.awesome.turtlenecksandgotos.model.banner.HasBanner;
 import com.awesome.turtlenecksandgotos.model.date.HasDate;
 import com.awesome.turtlenecksandgotos.model.downloads.HasDownloads;
 import com.awesome.turtlenecksandgotos.model.downloadsize.HasDownloadSize;
@@ -14,18 +16,25 @@ import com.awesome.turtlenecksandgotos.model.fans.HasFans;
 import com.awesome.turtlenecksandgotos.model.freedownload.IsFreeDownload;
 import com.awesome.turtlenecksandgotos.model.hubtype.HasHubType;
 import com.awesome.turtlenecksandgotos.model.hubtype.HubType;
+import com.awesome.turtlenecksandgotos.model.icon.HasIcon;
+import com.awesome.turtlenecksandgotos.model.lastplayed.HasLastPlayed;
 import com.awesome.turtlenecksandgotos.model.lastupdated.HasLastUpdated;
 import com.awesome.turtlenecksandgotos.model.listing.HasListingType;
 import com.awesome.turtlenecksandgotos.model.listing.ListingType;
 import com.awesome.turtlenecksandgotos.model.longdesc.HasLongDesc;
+import com.awesome.turtlenecksandgotos.model.multiplayer.IsMultiplayer;
 import com.awesome.turtlenecksandgotos.model.screenshots.HasScreenshots;
 import com.awesome.turtlenecksandgotos.model.shortdesc.HasShortDesc;
+import com.awesome.turtlenecksandgotos.model.smallicon.HasSmallIcon;
+import com.awesome.turtlenecksandgotos.model.tags.HasTags;
+import com.awesome.turtlenecksandgotos.model.tags.Tags;
 import com.awesome.turtlenecksandgotos.model.title.HasTitle;
 import com.awesome.turtlenecksandgotos.model.version.HasVersion;
+import com.awesome.turtlenecksandgotos.model.video.HasVideo;
 
 @XmlType
 @XmlAccessorType(XmlAccessType.PUBLIC_MEMBER)
-public class General implements HasHubType, HasTitle, HasShortDesc, HasLongDesc, HasAuthor, HasDate, HasLastUpdated, HasDownloadSize, HasDownloads, HasFans, HasScreenshots, HasListingType, IsFreeDownload, HasVersion {
+public class General implements HasHubType, HasTitle, HasShortDesc, HasLongDesc, HasAuthor, HasDate, HasLastUpdated, HasDownloadSize, HasDownloads, HasFans, HasScreenshots, HasListingType, IsFreeDownload, HasVersion, HasTags, HasLastPlayed, IsMultiplayer, HasBanner, HasIcon, HasSmallIcon, HasVideo {
 	private String title;
 	private HubType hubType;
 	private String shortDescription;
@@ -40,6 +49,13 @@ public class General implements HasHubType, HasTitle, HasShortDesc, HasLongDesc,
 	private ListingType listing;
 	private boolean freeDownload;
 	private String version;
+	private Tags tags;
+	private Date lastPlayed;
+	private boolean multiplayer;
+	private URI banner;
+	private URI icon;
+	private URI smallIcon;
+	private URI video;
 	
 	@Override
 	public String getTitle() {
@@ -179,5 +195,75 @@ public class General implements HasHubType, HasTitle, HasShortDesc, HasLongDesc,
 	@Override
 	public void setVersion(String version) {
 		this.version = version;
+	}
+
+	@Override
+	public Tags getTags() {
+		return tags;
+	}
+
+	@Override
+	public void setTags(Tags tags) {
+		this.tags = tags;
+	}
+
+	@Override
+	public Date getLastPlayed() {
+		return lastPlayed;
+	}
+
+	@Override
+	public void setLastPlayed(Date date) {
+		this.lastPlayed = date;
+	}
+
+	@Override
+	public boolean isMultiplayer() {
+		return multiplayer;
+	}
+
+	@Override
+	public void setMultiplayer(boolean multiplayer) {
+		this.multiplayer = multiplayer;
+	}
+
+	@Override
+	public URI getBanner() {
+		return banner;
+	}
+
+	@Override
+	public void setBanner(URI banner) {
+		this.banner = banner;
+	}
+
+	@Override
+	public URI getIcon() {
+		return icon;
+	}
+
+	@Override
+	public void setIcon(URI icon) {
+		this.icon = icon;
+	}
+	
+	@Override
+	public URI getSmallIcon() {
+		return smallIcon;
+	}
+
+	@Override
+	public void setSmallIcon(URI icon) {
+		this.smallIcon = icon;
+	}
+
+	@Override
+	public URI getVideo() {
+		return video;
+	}
+
+	@Override
+	public void setVideo(URI video) {
+		this.video = video;
 	}
 }

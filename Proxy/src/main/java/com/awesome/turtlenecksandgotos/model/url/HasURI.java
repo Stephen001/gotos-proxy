@@ -1,4 +1,4 @@
-package com.awesome.turtlenecksandgotos.model.uri;
+package com.awesome.turtlenecksandgotos.model.url;
 
 import java.net.URI;
 

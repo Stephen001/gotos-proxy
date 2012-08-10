@@ -12,6 +12,7 @@ import com.awesome.turtlenecksandgotos.logic.TextParser;
 import com.awesome.turtlenecksandgotos.logic.TextSectionParser;
 import com.awesome.turtlenecksandgotos.model.DeveloperHub;
 import com.awesome.turtlenecksandgotos.model.author.AuthorHandler;
+import com.awesome.turtlenecksandgotos.model.banner.BannerHandler;
 import com.awesome.turtlenecksandgotos.model.date.DateHandler;
 import com.awesome.turtlenecksandgotos.model.downloads.DownloadsHandler;
 import com.awesome.turtlenecksandgotos.model.downloadsize.DownloadSizeHandler;
@@ -20,13 +21,17 @@ import com.awesome.turtlenecksandgotos.model.freedownload.FreeDownloadHandler;
 import com.awesome.turtlenecksandgotos.model.general.General;
 import com.awesome.turtlenecksandgotos.model.general.GeneralHandler;
 import com.awesome.turtlenecksandgotos.model.hubtype.HubTypeHandler;
+import com.awesome.turtlenecksandgotos.model.icon.IconHandler;
 import com.awesome.turtlenecksandgotos.model.lastupdated.LastUpdatedHandler;
 import com.awesome.turtlenecksandgotos.model.listing.ListingHandler;
 import com.awesome.turtlenecksandgotos.model.longdesc.LongDescHandler;
 import com.awesome.turtlenecksandgotos.model.screenshots.ScreenshotsHandler;
 import com.awesome.turtlenecksandgotos.model.shortdesc.ShortDescHandler;
+import com.awesome.turtlenecksandgotos.model.smallicon.SmallIconHandler;
+import com.awesome.turtlenecksandgotos.model.tags.TagsHandler;
 import com.awesome.turtlenecksandgotos.model.title.TitleHandler;
 import com.awesome.turtlenecksandgotos.model.version.VersionHandler;
+import com.awesome.turtlenecksandgotos.model.video.VideoHandler;
 
 /**
  * Session Bean implementation class DeveloperTextParser
@@ -55,6 +60,11 @@ public class DeveloperTextParser implements DeveloperTextParserLocal {
         generalParser.registerHandler("listing", new ListingHandler<General>());
         generalParser.registerHandler("version", new VersionHandler<General>());
         generalParser.registerHandler("free_download", new FreeDownloadHandler<General>());
+        generalParser.registerHandler("tags", new TagsHandler<General>());
+        generalParser.registerHandler("banner", new BannerHandler<General>());
+        generalParser.registerHandler("icon", new IconHandler<General>());
+        generalParser.registerHandler("small_icon", new SmallIconHandler<General>());
+        generalParser.registerHandler("video", new VideoHandler<General>());
         parser.registerHandler(Pattern.compile("^general$"), General.class, generalParser, new GeneralHandler<DeveloperHub>());
     }
 
