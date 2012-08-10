@@ -2,7 +2,6 @@ package com.awesome.turtlenecksandgotos.model.url;
 
 import java.net.URI;
 
-import com.awesome.turtlenecksandgotos.model.uri.HasURI;
 
 public class URIHandler<T> extends AbstractURIHandler<T> {
 
