@@ -13,6 +13,7 @@
 		<module>Proxy</module>
 		<module>ProxyServices</module>
 		<module>GOTOs</module>
+		<module>LibraryDAO</module>
 	</modules>
 
 	<properties>
