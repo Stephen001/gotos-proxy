@@ -1,0 +1,15 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+      
+	<head>
+		<title>#{libraryProxy.hub.general.title} by #{libraryProxy.hub.general.author}</title>
+	</head>
+	<body>
+		<h1>#{libraryProxy.hub.general.title}</h1>
+		<p>#{libraryProxy.hub.general.shortDescription}</p>
+		<p>Version #{libraryProxy.hub.general.version} last updated on #{libraryProxy.hub.general.lastUpdated}</p>
+		<div><h:outputText value="#{libraryProxy.hub.general.longDescription}" escape="false" /></div>
+	</body>
+</html>
