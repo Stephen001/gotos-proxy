@@ -15,6 +15,18 @@
 	<packaging>war</packaging>
 
 	<dependencies>
+		<!-- Our Modules -->
+		<dependency>
+			<groupId>com.awesome.turtlenecksandgotos</groupId>
+			<artifactId>proxy</artifactId>
+			<type>ejb-client</type>
+		</dependency>
+		<dependency>
+			<groupId>com.awesome.turtlenecksandgotos</groupId>
+			<artifactId>library-dao</artifactId>
+			<type>ejb-client</type>
+		</dependency>
+	
 		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-api</artifactId>
@@ -34,12 +46,6 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.awesome.turtlenecksandgotos</groupId>
-			<artifactId>proxy</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-			<type>ejb-client</type>
-		</dependency>
-		<dependency>
 			<groupId>javax.faces</groupId>
 			<artifactId>jsf-api</artifactId>
 			<scope>provided</scope>
@@ -51,10 +57,6 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
-				<version>2.2</version>
-				<configuration>
-					<failOnMissingWebXml>false</failOnMissingWebXml>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>

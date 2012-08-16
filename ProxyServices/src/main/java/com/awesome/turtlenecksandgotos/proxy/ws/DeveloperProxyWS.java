@@ -11,6 +11,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import com.awesome.turtlenecksandgotos.dao.LibraryDAOLocal;
 import com.awesome.turtlenecksandgotos.model.DeveloperHub;
 import com.awesome.turtlenecksandgotos.proxy.DeveloperProxyLocal;
 
@@ -27,6 +28,9 @@ public class DeveloperProxyWS {
 	@EJB
 	private DeveloperProxyLocal proxy;
 	
+	@EJB
+	private LibraryDAOLocal libraryDao;
+	
     /**
      * Default constructor. 
      */
@@ -35,6 +39,8 @@ public class DeveloperProxyWS {
     @WebMethod
     @GET @Path("{developer}/{hubname}")
     public DeveloperHub proxify(@PathParam("developer") final String developer, @PathParam("hubname") final String hubname) {
-    	return proxy.proxify(developer, hubname);
+    	DeveloperHub hub = proxy.proxify(developer, hubname);
+    	libraryDao.createOrGet(hubname, hub);
+    	return hub;
     }
 }

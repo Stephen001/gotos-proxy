@@ -3,10 +3,14 @@ package com.awesome.turtlenecksandgotos.datamodel.library;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 
 @Entity
-@NamedQuery(name="by-author", query="SELECT u FROM LibraryMetadata u WHERE u.author = ?")
+@NamedQueries({
+	@NamedQuery(name="by-author", query="SELECT u FROM LibraryMetadata u WHERE u.author = :author"),
+	@NamedQuery(name="by-comp-id", query="SELECT u FROM LibraryMetadata u WHERE u.author = :author AND u.name = :name")
+	})
 public class LibraryMetadata {
 	@Id
 	@GeneratedValue
@@ -15,6 +19,8 @@ public class LibraryMetadata {
 	private String author;
 	
 	private String name;
+	
+	private String printableName;
 	
 	private String description;
 
@@ -48,5 +54,13 @@ public class LibraryMetadata {
 
 	public void setAuthor(String author) {
 		this.author = author;
+	}
+
+	public String getPrintableName() {
+		return printableName;
+	}
+
+	public void setPrintableName(String printableName) {
+		this.printableName = printableName;
 	}
 }
