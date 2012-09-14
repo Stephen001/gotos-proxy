@@ -1,10 +1,19 @@
 package com.awesome.turtlenecksandgotos.datamodel.library;
 
+import java.util.Date;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.OrderBy;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @NamedQueries({
@@ -23,6 +32,21 @@ public class LibraryMetadata {
 	private String printableName;
 	
 	private String description;
+	
+	private String coverPage;
+	
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date lastUpstream;
+	
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date createdDated;
+	
+	@OneToMany(cascade={CascadeType.ALL}, mappedBy="metadata")
+	@OrderBy("version DESC")
+	private Set<LibraryVersion> versions;
+	
+	@OneToOne(cascade={CascadeType.ALL})
+	private LibraryVersion latestVersion;
 
 	public int getId() {
 		return id;
@@ -62,5 +86,45 @@ public class LibraryMetadata {
 
 	public void setPrintableName(String printableName) {
 		this.printableName = printableName;
+	}
+
+	public String getCoverPage() {
+		return coverPage;
+	}
+
+	public void setCoverPage(String coverPage) {
+		this.coverPage = coverPage;
+	}
+
+	public Date getCreatedDated() {
+		return createdDated;
+	}
+
+	public void setCreatedDated(Date createdDated) {
+		this.createdDated = createdDated;
+	}
+
+	public Date getLastUpstream() {
+		return lastUpstream;
+	}
+
+	public void setLastUpstream(Date lastUpstream) {
+		this.lastUpstream = lastUpstream;
+	}
+
+	public Set<LibraryVersion> getVersions() {
+		return versions;
+	}
+
+	public void setVersions(Set<LibraryVersion> versions) {
+		this.versions = versions;
+	}
+
+	public LibraryVersion getLatestVersion() {
+		return latestVersion;
+	}
+
+	public void setLatestVersion(LibraryVersion latestVersion) {
+		this.latestVersion = latestVersion;
 	}
 }
